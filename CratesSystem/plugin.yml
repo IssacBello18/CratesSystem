@@ -1,0 +1,5 @@
+name: CratesSystem
+main: Crates\Loader
+api: [3.2.3]
+version: 1.0.0
+author: iVryMaz
