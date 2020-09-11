@@ -2,6 +2,8 @@
 
 namespace Crates;
 
+use Crates\provider\YamlProvider;
+
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat as TE;
@@ -12,6 +14,9 @@ class Loader extends PluginBase {
 	
 	/** @var Interface */
 	protected static $instance = null;
+	
+	/** @var array */
+	public static $crates = [];
 	
 	/**
 	 * @return void
@@ -24,14 +29,14 @@ class Loader extends PluginBase {
 	 * @return void
 	 */
 	public function onEnable() : void {
-		
+		YamlProvider::init();
 	}
 	
 	/**
 	 * @return void
 	 */
 	public function onDisable() : void {
-		
+		YamlProvider::save();
 	}
 	
 	/**
